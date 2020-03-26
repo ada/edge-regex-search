@@ -1,0 +1,168 @@
+body {
+    font-family: "system-ui", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    cursor: default;
+    font-size: 14px;
+    color: #262626;
+    margin: 5px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #484848;
+        color: white;
+    }
+}
+
+#popup {
+    width: 500px;
+}
+
+a {
+    color: #4EA1E1;
+}
+
+.row {}
+
+.column {
+    float: left;
+    padding: 0px 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+input[type="text"], input[type="time"], input[type="date"], select {
+    font-family: inherit;
+    height: 32px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    background: transparent;
+    border: none;
+    padding: 0 11px;
+    border-radius: 2px;
+    outline: none;
+}
+
+input[type="button"], input[type="submit"], button {
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    margin: 12px 0px 16px 0px;
+    max-width: 374px;
+    transition: all 0.1s ease-in-out;
+    white-space: nowrap;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    min-width: 32px;
+    padding: 0 10px;
+    height: 32px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    color: #2B2B2B;
+    fill: #2B2B2B;
+    background-color: #EDEDED;
+    outline: none;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover, button:hover {
+    background-color: rgb(242, 242, 242);
+}
+
+@media (prefers-color-scheme: dark) {
+    input[type="button"], input[type="submit"], button {
+        background-color: #484848;
+        color: white;
+    }
+    input[type="button"]:hover, input[type="submit"]:hover, button:hover {
+        background-color: #545454;
+    }
+    input[type="text"], input[type="time"], input[type="date"], select {
+        color: white;
+        background-color: #484848;
+    }
+    input[type="text"]:focus, input[type="time"]:focus, input[type="date"]:focus, select:focus {
+        color: white;
+        background-color: #4d4d4d;
+    }
+}
+
+#inputRegex {
+    min-width: 250px;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-gray {
+    color: #9D9D9D;
+}
+
+.text-danger {
+    color: #bb3b3b;
+}
+
+#numResults {
+    color: #9D9D9D;
+    font-size: 10px;
+}
+
+#history {
+    margin: 4px 2px;
+    display: none;
+}
+
+.historyDeleteEntry {
+    color: #c00;
+    cursor: pointer;
+    margin-right: 4px;
+    font-size: 0.8em;
+}
+
+.historyLink {
+    color: #4EA1E1;
+    cursor: pointer;
+}
+
+.toolbar button {
+    color: white;
+    padding: 0;
+    background-color: transparent;
+    opacity: 0.75;
+    margin: 0;
+}
+
+.toolbar button.selected {
+    opacity: 1;
+    background-color: #545454;
+}
+
+.toolbar button:hover {
+    opacity: 1;
+    background-color: #545454;
+}
+
+#UIInputTextFlags{
+    width: 44px;
+    height: 30px;
+}
+
+#UIInputTextRegex{
+    width: 190px;
+    height: 30px;
+}
+
+#UIDivNumberOfResults {
+    min-width: 50px;
+    line-height: 32px !important;
+    height: 30px;
+}

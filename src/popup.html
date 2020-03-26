@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Regex Search</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/theme.css">
+</head>
+
+<body id="popup">
+  <section id="UIDivRowSearch">
+    <div class="column">
+      <input id="UIInputTextRegex" type="text" name="inputRegex" placeholder="Regex"></input>
+      <input id="UIInputTextFlags" type="text" name="inputRegex" placeholder="Flags"></input>
+    </div>
+
+    <div class="column" style="border-right: 1px solid #5a5a5a;">
+      <div class="text-gray" id="UIDivNumberOfResults"></div>
+    </div>
+
+    <div class="column toolbar">
+      <button id="UIButtonPrevious" type="button" title="Previous Match"><i class="fa fa-angle-up"></i></button>
+      <button id="UIButtonNext" type="button" title="Next Match"><i class="fa fa-angle-down"></i></button>
+      <button id="UIButtonHelp" type="button" title="Help"><i class="fa fa-question"></i></button>
+    </div>
+    <div class="clear"></div>
+  </section>
+
+</body>
+<script type="module" src="js/lib/browser-polyfill.js"></script>
+<script type="module" src="js/popup.js"></script>
+
+</html>
