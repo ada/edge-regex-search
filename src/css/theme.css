@@ -16,7 +16,7 @@ body {
 }
 
 #popup {
-    width: 500px;
+    width: 515px;
 }
 
 a {
@@ -152,12 +152,12 @@ input[type="button"]:hover, input[type="submit"]:hover, button:hover {
 }
 
 #UIInputTextFlags{
-    width: 44px;
+    width: 32px;
     height: 30px;
 }
 
 #UIInputTextRegex{
-    width: 190px;
+    width: 180px;
     height: 30px;
 }
 

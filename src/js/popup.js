@@ -5,6 +5,7 @@ let UIButtonPrevious = document.getElementById('UIButtonPrevious');
 let UIInputTextRegex = document.getElementById('UIInputTextRegex');
 let UIInputTextFlags = document.getElementById('UIInputTextFlags');
 let UIDivNumberOfResults = document.getElementById('UIDivNumberOfResults');
+let UIButtonClose = document.getElementById('UIButtonClose');
 let UIButtonHelp = document.getElementById('UIButtonHelp');
 
 let searchOptions = { regex: "", flags: "" }
@@ -59,6 +60,20 @@ async function help() {
   browser.runtime.openOptionsPage();
 }
 
+async function unload() {
+  sendMessage({ id: 'RESET' });
+  window.close();
+}
+
+function onKeyPress(e) {
+  e = e || window.event;
+  if (e.keyCode === 13)
+    selectNext();
+
+  if (e.keyCode === 27)
+    unload()
+};
+
 async function init() {
   UIButtonNext.addEventListener('click', selectNext);
   UIButtonPrevious.addEventListener('click', selectPrevious);
@@ -66,7 +81,10 @@ async function init() {
   UIInputTextFlags.addEventListener('input', search);
   UIButtonHelp.addEventListener('click', help);
   browser.runtime.onMessage.addListener(onMessage);
+  UIButtonClose.addEventListener('click', unload);
+  document.addEventListener("keypress", onKeyPress);
   UIInputTextRegex.focus();
+
 }
 
 init();
