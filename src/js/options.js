@@ -10,16 +10,21 @@ async function onReset(){
 }
 
 async function onOptionsChanged(){
-    if (UIInputignoredTags.value.length === 0) {
+    const regex = /\^\(\?:HIGHLIGHT\|[A-Z|]+\)\$$/;
+
+    if (regex.test(UIInputignoredTags.value) !== true) {
+        UIInputignoredTags.classList.add("invalid"); 
         return; 
     }
 
     try {
         var re = new RegExp(UIInputignoredTags.value, 'i');
+        UIInputignoredTags.classList.remove("invalid"); 
         _settings.ignoredTags = UIInputignoredTags.value; 
         settings.set(_settings); 
     } catch (error) {
         console.error(`Invalid regex: "${UIInputignoredTags.value}"`);
+        UIInputignoredTags.classList.add("invalid");
     }
 }
 
@@ -28,6 +33,7 @@ async function init(){
     UIInputignoredTags.value = _settings.ignoredTags; 
     UIInputignoredTags.addEventListener('input', onOptionsChanged); 
     UIButtonReset.addEventListener('click', onReset);
+    UIInputignoredTags.classList.remove("invalid"); 
 }
 
 init();

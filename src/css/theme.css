@@ -77,6 +77,10 @@ input[type="text"], input[type="time"], input[type="date"], select {
     outline: none; 
 }
 
+input.invalid{
+    color: #ff6e6e; 
+}
+
 input[type="button"], input[type="submit"], button {
     outline: none;
     appearance: none;
@@ -114,6 +118,9 @@ input[type="button"]:hover, input[type="submit"]:hover, button:hover {
 
     input[type="text"], input[type="time"], input[type="date"], select {
         color: white;
+    }
+    input.invalid{
+        color: #ff6e6e; 
     }
 }
 
