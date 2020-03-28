@@ -1,33 +1,46 @@
 class Highlighter {
     constructor(element) {
       this.startNode = element;
-      this.hiliteTag = "highlight";
-      this.skipTags = new RegExp("^(?:" + this.hiliteTag + "|SCRIPT|FORM|SPAN|INPUT|SELECT|TEXTAREA|IMG|BUTTON|SVG|CANVAS)$", 'i');
+      this.highlightTag = "highlight";
+      this.ignoredTags = new RegExp("^(?:" + this.highlightTag + "|SCRIPT|STYLE|INPUT|SELECT|TEXTAREA|IMG|SVG|CANVAS)$", 'i');
       this.colors = ["yellow", "orange"];
       this.selectedIndex = 0;
       this.nResults = 0;
     }
   
+    setIgnoredTags (regex){
+      this.ignoredTags = new RegExp(regex, 'i');
+    }
+
     setStartNode(element) {
       this.startNode = element;
     }
   
-    hiliteWords(node, regex) {
+    isVisible(element){
+      var style = window.getComputedStyle(element);
+      if (style.display === 'none') 
+        return false;
+      if (style.visibility !== 'visible') 
+        return false;
+      return true; 
+    }
+
+    highlightWords(node, regex) {
       if (node === undefined || !node)
         return;
   
-      if (this.skipTags.test(node.nodeName))
+      if (this.ignoredTags.test(node.nodeName))
         return;
   
-      if (node.hasChildNodes()) {
+      if (node.hasChildNodes() && this.isVisible(node)) {
         for (var i = 0; i < node.childNodes.length; i++) {
-          this.hiliteWords(node.childNodes[i], regex);
+          this.highlightWords(node.childNodes[i], regex);
         }
       };
   
       if (node.nodeType == 3 && node.nodeValue.length) {
         if (this.regs = regex.exec(node.nodeValue)) {
-          var match = document.createElement(this.hiliteTag);
+          var match = document.createElement(this.highlightTag);
           match.appendChild(document.createTextNode(this.regs[0]));
           match.style.backgroundColor = this.colors[0];
           match.style.color = "#000";
@@ -49,7 +62,7 @@ class Highlighter {
   
       let previousSelectedIndex = this.selectedIndex;
       this.selectedIndex = index;
-      var arr = document.getElementsByTagName(this.hiliteTag);
+      var arr = document.getElementsByTagName(this.highlightTag);
       arr[previousSelectedIndex].style.backgroundColor = this.colors[0];
       arr[this.selectedIndex].style.backgroundColor = this.colors[1];
       arr[this.selectedIndex].scrollIntoView({behavior:'smooth', block:'center', inline:'center'});
@@ -57,12 +70,12 @@ class Highlighter {
   
     apply(regex) {
       this.nResults = 0;
-      this.hiliteWords(this.startNode, regex);
+      this.highlightWords(this.startNode, regex);
       console.log(`Found ${this.nResults} matches.`);
     }
   
     remove() {
-      let arr = document.getElementsByTagName(this.hiliteTag);
+      let arr = document.getElementsByTagName(this.highlightTag);
   
       for (var i = 0; i < arr.length; i++) {
         const element = arr[i];
@@ -71,7 +84,7 @@ class Highlighter {
         parent.normalize();
       }
   
-      arr = document.getElementsByTagName(this.hiliteTag);
+      arr = document.getElementsByTagName(this.highlightTag);
       if (arr.length) {
         this.remove();      
       }

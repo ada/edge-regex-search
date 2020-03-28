@@ -8,24 +8,24 @@
 </head>
 
 <body id="popup">
-  <section id="UIDivRowSearch">
+  <div id="UIDivRowSearch">
     <div class="column">
       <input id="UIInputTextRegex" type="text" name="inputRegex" placeholder="Regex"></input>
-      <input id="UIInputTextFlags" type="text" name="inputRegex" placeholder="Flags"></input>
+      <input id="UIInputTextFlags" type="text" name="inputRegex" placeholder="Flags" value="i"></input>
     </div>
 
-    <div class="column" style="border-right: 1px solid #5a5a5a;">
+    <div class="column" style="border-right: 1px solid #9D9D9D;">
       <div class="text-gray" id="UIDivNumberOfResults"></div>
     </div>
 
     <div class="column toolbar">
       <button id="UIButtonPrevious" type="button" title="Previous Match"><i class="fa fa-angle-up"></i></button>
       <button id="UIButtonNext" type="button" title="Next Match"><i class="fa fa-angle-down"></i></button>
-      <button id="UIButtonHelp" type="button" title="Help"><i class="fa fa-question"></i></button>
+      <button id="UIButtonHelp" type="button" title="Help"><i class="fa fa-cog"></i></button>
       <button id="UIButtonClose" type="button" title="Close"><i class="fa fa-times"></i></button>
     </div>
     <div class="clear"></div>
-  </section>
+  </div>
 
 </body>
 <script type="module" src="js/lib/browser-polyfill.js"></script>

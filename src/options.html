@@ -4,13 +4,23 @@
     <title>Options</title>
     <link rel="stylesheet" href="./css/theme.css">
   </head>
-  <body id="options" style="padding: 0 15px">
-    <script type="module" src="js/lib/browser-polyfill.js"></script>
-    <script type="module" src="js/options.js"></script>
+  <body id="options">
+    <section>
+      <h4>Ignored tags</h4>
+      <p>Unexpected behaviour might occur if you are unsure about editing this field.</p>
+      <input type="text" id="UIInputignoredTags" style="width: 75%;">
+    </section>
+
     <section>
       <h4>Flags</h4>
       <p>To read about the available flags please refer to <a
           href="https://javascript.info/regexp-introduction#flags">javascript.info</a>.</p>
+    </section>
+
+    <section>
+      <h4>Reset</h4>
+      <p>Reset extenstion settings. </p>
+      <button type="bitton" id="UIButtonReset">Reset settings</button>
     </section>
 
     <section>
@@ -19,5 +29,8 @@
             title="Repository link">github.com/ada/edge-regex-search</a>.</small>
       </p>
     </section>
+
+    <script type="module" src="js/lib/browser-polyfill.js"></script>
+    <script type="module" src="js/options.js"></script>
   </body>
 </html>

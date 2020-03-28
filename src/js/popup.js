@@ -1,4 +1,5 @@
 import * as util from './component/util.js';
+import * as settings from './component/settings.js'; 
 
 let UIButtonNext = document.getElementById('UIButtonNext');
 let UIButtonPrevious = document.getElementById('UIButtonPrevious');
@@ -85,6 +86,13 @@ async function init() {
   document.addEventListener("keypress", onKeyPress);
   UIInputTextRegex.focus();
 
+  let _settings = await settings.get(); 
+
+  try {
+    await sendMessage({ id: 'SET_IGNORED_TAGS', regex : _settings.ignoredTags });
+  } catch (error) {
+    console.error(`Unable to set ignored tags.`); 
+  }
 }
 
 init();

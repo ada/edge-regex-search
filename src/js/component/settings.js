@@ -4,7 +4,7 @@ import { isEmptyObject } from "./util.js";
     Default settings when using the extension for the first time
 */
 export const defaults = {
-
+    ignoredTags : "^(?:HIGHLIGHT|SCRIPT|STYLE|INPUT|SELECT|TEXTAREA|IMG|SVG|CANVAS)$"
 }
 
 /* 

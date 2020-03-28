@@ -8,22 +8,34 @@ body {
     margin: 5px 0;
 }
 
+#popup {
+    width: 515px;
+}
+
+#options{
+    
+}
+
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #484848;
+        background-color: rgb(51, 51, 51);
         color: white;
+    }
+
+    #popup{
+        background-color: #484848;
     }
 }
 
-#popup {
-    width: 515px;
+
+
+section {
+    padding: 0 15px
 }
 
 a {
     color: #4EA1E1;
 }
-
-.row {}
 
 .column {
     float: left;
@@ -34,6 +46,24 @@ a {
     clear: both;
 }
 
+/*
+  Forms
+*/
+
+form {
+    margin: 10px auto;
+}
+
+ label {
+    text-align: left;
+}
+
+@media (prefers-color-scheme: dark) {
+    label, table th {
+        color: #fff;
+    }
+}
+
 input[type="text"], input[type="time"], input[type="date"], select {
     font-family: inherit;
     height: 32px;
@@ -41,10 +71,10 @@ input[type="text"], input[type="time"], input[type="date"], select {
     line-height: 20px;
     font-weight: 400;
     background: transparent;
-    border: none;
+    border: 1px solid #737373;
     padding: 0 11px;
     border-radius: 2px;
-    outline: none;
+    outline: none; 
 }
 
 input[type="button"], input[type="submit"], button {
@@ -66,7 +96,6 @@ input[type="button"], input[type="submit"], button {
     color: #2B2B2B;
     fill: #2B2B2B;
     background-color: #EDEDED;
-    outline: none;
 }
 
 input[type="button"]:hover, input[type="submit"]:hover, button:hover {
@@ -75,20 +104,41 @@ input[type="button"]:hover, input[type="submit"]:hover, button:hover {
 
 @media (prefers-color-scheme: dark) {
     input[type="button"], input[type="submit"], button {
-        background-color: #484848;
+        background-color: #454545;
         color: white;
     }
+    
     input[type="button"]:hover, input[type="submit"]:hover, button:hover {
         background-color: #545454;
     }
+
     input[type="text"], input[type="time"], input[type="date"], select {
         color: white;
-        background-color: #484848;
     }
-    input[type="text"]:focus, input[type="time"]:focus, input[type="date"]:focus, select:focus {
+}
+
+.button-active {
+    background-color: rgb(224, 222, 222);
+}
+
+@media (prefers-color-scheme: dark) {
+    .button-active {
+        background-color: #545454;
         color: white;
-        background-color: #4d4d4d;
     }
+}
+
+.button-primary {
+    background-color: rgba(40, 129, 197, 1) !important;
+    color: white !important;
+}
+
+.button-primary:hover {
+    background-color: rgba(40, 129, 210, 1) !important;
+}
+
+.button-primary:focus {
+    background-color: rgba(40, 129, 197, 1) !important;
 }
 
 #inputRegex {
@@ -134,7 +184,6 @@ input[type="button"]:hover, input[type="submit"]:hover, button:hover {
 }
 
 .toolbar button {
-    color: white;
     padding: 0;
     background-color: transparent;
     opacity: 0.75;
@@ -143,22 +192,37 @@ input[type="button"]:hover, input[type="submit"]:hover, button:hover {
 
 .toolbar button.selected {
     opacity: 1;
-    background-color: #545454;
+    background-color: #EDEDED;
 }
 
 .toolbar button:hover {
     opacity: 1;
-    background-color: #545454;
+    background-color: #EDEDED;
 }
 
-#UIInputTextFlags{
+@media (prefers-color-scheme: dark) {
+    .toolbar button {
+        color: white;
+    }
+    .toolbar button.selected {
+        background-color: #545454;
+    }
+    .toolbar button:hover {
+        background-color: #545454;
+    }
+}
+
+#UIInputTextFlags {
     width: 32px;
     height: 30px;
+    border:1px solid transparent; 
 }
 
-#UIInputTextRegex{
+#UIInputTextRegex {
     width: 180px;
     height: 30px;
+    
+    border:1px solid transparent; 
 }
 
 #UIDivNumberOfResults {

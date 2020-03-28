@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Regex Search",
-  "description": "Search using Regular expression.",
-  "version": "1.0",
+  "name": "Regex",
+  "description": "Search using Regular expressions.",
+  "homepage_url": "https://github.com/ada/edge-regex-search",
+  "version": "1.1",
   "icons": {
     "48": "icons/icon-48.png",
     "128": "icons/icon-128.png"
@@ -15,6 +16,7 @@
     "default_popup": "popup.html"
   },
   "permissions": [
+    "storage", 
     "activeTab"
   ],
   "background": {

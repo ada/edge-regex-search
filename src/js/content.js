@@ -28,6 +28,7 @@ function search(options) {
 }
 
 function onMessage(message) {
+  console.log(message); 
   switch (message.id) {
     case 'SEARCH':
       search(message.options);
@@ -42,6 +43,9 @@ function onMessage(message) {
       break;
     case 'RESET':
       highlighter.remove();
+      break;
+    case 'SET_IGNORED_TAGS':
+      highlighter.setIgnoredTags(message.regex); 
       break;
     default:
       console.error(`Message ${message} no implemented.`);
