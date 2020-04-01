@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Regex",
+  "name": "Regex Search",
   "description": "Search using Regular expressions.",
   "homepage_url": "https://github.com/ada/edge-regex-search",
   "version": "1.1",
