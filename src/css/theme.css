@@ -9,7 +9,7 @@ body {
 }
 
 #popup {
-    width: 515px;
+    width: 537px;
 }
 
 #options{
@@ -220,7 +220,7 @@ input[type="button"]:hover, input[type="submit"]:hover, button:hover {
 }
 
 #UIInputTextFlags {
-    width: 32px;
+    width: 54px;
     height: 30px;
     border:1px solid transparent; 
 }
